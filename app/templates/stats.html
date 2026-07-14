@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Trimler &dash; Link stats{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>Check your link <span class="accent">stats</span></h1>
+  <p class="subtitle">Paste a short code or the full short link to see its click count.</p>
+
+  <form id="stats-form" class="shorten-bar" autocomplete="off">
+    <input
+      type="text"
+      id="code_input"
+      name="code_input"
+      placeholder="e.g. testbrand or http://localhost:8090/testbrand"
+      required
+    >
+    <button type="submit" id="submit-btn">
+      <span class="btn-label">Check</span>
+    </button>
+  </form>
+
+  <p id="error-message" class="error-message" hidden></p>
+
+  <div id="result" class="result-card" hidden>
+    <div class="result-row">
+      <a id="result-link" href="#" target="_blank" rel="noopener"></a>
+      <span id="result-alias-badge" class="badge" hidden>Custom alias</span>
+    </div>
+    <dl class="stats-grid">
+      <dt>Total clicks</dt>
+      <dd id="stat-clicks"></dd>
+      <dt>Created</dt>
+      <dd id="stat-created"></dd>
+      <dt>Expires</dt>
+      <dd id="stat-expires"></dd>
+    </dl>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', path='/js/stats.js') }}"></script>
+{% endblock %}

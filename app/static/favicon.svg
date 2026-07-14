@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="trimler-gradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4338ca"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="24" height="24" rx="6" fill="url(#trimler-gradient)"/>
+  <text x="12" y="17.5" text-anchor="middle" font-family="-apple-system, Helvetica, Arial, sans-serif"
+        font-weight="800" font-size="15" fill="#ffffff">T</text>
+</svg>

@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.env
+.venv/
+.env/
+
+# cursor files
+.cursor
+
+# FastAPI specific
+instance/
+*.log
+
+# IDE / Editor config files
+.vscode/
+.idea/
+*.iml
+
+# Testing & Coverage reports
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+.coverage
+coverage.xml
+*.cover
+nosetests.xml
+unittest.xml
+
+# Dependencies
+*.egg-info/
+dist/
+build/
+
+# Docker
+docker-compose.override.yml
+
+# Database & Cache
+*.db
+*.sqlite3
+__pypackages__/
+
+# Misc
+.DS_Store
+Thumbs.db
+
+# claude files
+.claude
+
+*.md
+!README.md
+!DOCKER_README.md
+
+# ruff cache
+.ruff_cache/
+
+.cursorrules
+
+graphify-out/

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Trimler &dash; Short links, fast{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <!-- <span class="eyebrow">Free &middot; No sign-up &middot; Instant</span> -->
+  <h1>Shorten a long URL <span class="accent">in one click</span></h1>
+  <p class="subtitle">Paste your link below. Optionally pick a custom alias and an expiry date.</p>
+
+  <form id="shorten-form" class="shorten-bar" autocomplete="off">
+    <input type="url" id="long_url" name="long_url" placeholder="https://example.com/a/very/long/path" required>
+    <button type="submit" id="submit-btn">
+      <span class="btn-label">Shorten</span>
+    </button>
+  </form>
+
+  <button type="button" id="toggle-advanced" class="btn-secondary">+ Custom alias / expiry</button>
+
+  <div id="advanced-options" class="advanced-options" hidden>
+    <input type="text" id="custom_alias" name="custom_alias" placeholder="Custom alias, e.g. my-brand" maxlength="32"
+      pattern="[A-Za-z0-9_-]+">
+    <input type="number" id="ttl" name="ttl" placeholder="Expires in (seconds)" min="1">
+  </div>
+
+  <p id="error-message" class="error-message" hidden></p>
+
+  <div id="result" class="result-card" hidden>
+    <div class="result-row">
+      <a id="result-link" href="#" target="_blank" rel="noopener"></a>
+      <button id="copy-btn" type="button">Copy</button>
+    </div>
+    <div class="result-meta">
+      <span id="result-expiry"></span>
+      <span id="result-alias-badge" class="badge" hidden>Custom alias</span>
+    </div>
+  </div>
+
+  <div class="feature-strip">
+    <div class="feature">
+      <span class="feature-icon">&#9889;</span>
+      <span>Fast redirects</span>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">&#9878;</span>
+      <span>Custom aliases</span>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">&#9203;</span>
+      <span>Optional expiry</span>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', path='/js/main.js') }}"></script>
+{% endblock %}

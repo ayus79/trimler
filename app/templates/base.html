@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Trimler &dash; Short links, fast{% endblock %}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', path='/favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <img src="{{ url_for('static', path='/favicon.svg') }}" alt="" class="brand-icon">
+        <span class="brand-mark">Trimler</span>
+      </a>
+      <nav class="nav-links">
+        <a class="docs-link" href="/">Home</a>
+        <a class="docs-link" href="/stats">Stats</a>
+        <a class="docs-link" href="/docs" target="_blank" rel="noopener">API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>Trimler &dash; fast, reliable link shortening</span>
+    </div>
+  </footer>
+
+  {% block scripts %}{% endblock %}
+</body>
+
+</html>

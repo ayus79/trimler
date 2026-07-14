@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} &dash; Trimler{% endblock %}
+
+{% block content %}
+<section class="error-card">
+  <span class="error-code">{{ status_code }}</span>
+  <h1>{{ title }}</h1>
+  <p>{{ message }}</p>
+  <a class="back-link" href="/">&larr; Shorten a new link</a>
+</section>
+{% endblock %}
